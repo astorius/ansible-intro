@@ -1,0 +1,23 @@
+# WebApp Installation Instructions on Centos 7
+###############################################
+# Install Python Pip and dependencies on Centos 7
+-------------------------------------------------
+
+yum install -y epel-release python python-pip
+pip install flask flask-mysql
+
+# If you come across a certification validation error while running the above command, please use the below command.
+# sudo pip install --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org flask flask-mysql
+
+# Install MySQL Server on Centos 7
+---------------------------------------------
+
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum update
+yum -y install mysql-server
+service mysql start
+
+The complete playbook to get the same workin on CentOS is here:
+https://github.com/kodekloudhub/simple_web_application
+###############################################
